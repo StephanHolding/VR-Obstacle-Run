@@ -33,7 +33,10 @@ public class UIManager : MonoBehaviour {
     public void ShowWindow(string windowName)
     {
         if (!menuCanvas.gameObject.activeInHierarchy)
+        {
             menuCanvas.gameObject.SetActive(true);
+        }
+
 
         Transform toShow = GetWindow(windowName);
 

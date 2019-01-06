@@ -7,7 +7,7 @@ public class VR_Player : InteractionHandler {
 
     public Ship ship;
 
-    private void Update()
+    private void FixedUpdate()
     {
         switch (interactionMode)
         {
@@ -29,17 +29,22 @@ public class VR_Player : InteractionHandler {
 
         if (uiHit.transform != null)
         {
+            print("not null");
             GameManager.instance.activeController.ShowLineRenderer(uiHit.point, Color.blue);
 
             if (SteamVR_Input.Spaceship.inActions.UI_Interact.GetStateDown(GameManager.instance.activeInput))
             {
+                print("Button Pressed");
                 GameManager.instance.activeController.UIInteract(uiHit);
             }
+        }
+        else
+        {
+            GameManager.instance.activeController.DisableLineRenderer();
         }
 
         if (SteamVR_Input.Spaceship.inActions.Pause.GetStateDown(SteamVR_Input_Sources.Any))
         {
-            print("Pause button pressed");
             if (GameManager.instance.paused)
             {
                 GameManager.instance.TogglePause(false);
@@ -55,21 +60,18 @@ public class VR_Player : InteractionHandler {
             bool success = false;
             GameManager.instance.activeController.TryToInteract(out success);
 
-            print(success);
-
             if (success)
             {
                 GameManager.instance.TogglePause(false);
                 interactionMode = InteractionMode.Flying;
             }
-        }   
+        }
     }
 
     public void FlyingMode()
     {
         if (SteamVR_Input.Spaceship.inActions.Pause.GetStateDown(SteamVR_Input_Sources.Any))
         {
-            print("Pause button pressed");
             if (!GameManager.instance.paused)
             {
                 GameManager.instance.TogglePause(true);

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
-    public bool paused;
+    public bool paused { get; private set; }
 
     [Header("VR Hardware")]
     public SteamVR_Input_Sources activeInput;
@@ -79,7 +79,6 @@ public class GameManager : MonoBehaviour {
         return activeInput;
     }
 
-   
     public void TogglePause(bool toggle)
     {
         ObstacleManager.instance.MoveObstacles(toggle ? false : true);
@@ -95,11 +94,10 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver()
     {
-        Ship.playerShip.LockControls(true);
         Ship.playerShip.SetInteractionMode(InteractionHandler.InteractionMode.UI);
         UIManager.instance.ShowWindow("Game Over Menu");
-        ObstacleManager.instance.MoveObstacles(false);
-        paused = true;
+        TogglePause(true);
+
         AddScoreToHighscores(currentScore);
     }
 

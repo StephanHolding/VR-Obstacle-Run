@@ -2,7 +2,7 @@
 [System.Serializable]
 public class Score : SerializableData {
 
-   // public string playerName; NOT IMPLEMENTED YET.
+    public string playerName;
     public int score;
 
 }

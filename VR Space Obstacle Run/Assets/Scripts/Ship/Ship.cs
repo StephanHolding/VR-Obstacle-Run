@@ -77,7 +77,6 @@ public class Ship : MonoBehaviour {
     public void LockControls(bool toggle)
     {
         shipControl.LockSteering(toggle);
-        GameManager.instance.paused = toggle;
         cannotShoot = toggle;
     }
 

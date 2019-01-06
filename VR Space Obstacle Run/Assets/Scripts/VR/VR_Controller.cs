@@ -14,7 +14,7 @@ public class VR_Controller : MonoBehaviour {
         {
             if (uiHit.transform.GetComponent<Button>() != null)
             {
-                Button b = transform.GetComponent<Button>();
+                Button b = uiHit.transform.GetComponent<Button>();
                 b.onClick.Invoke();
             }
         }
@@ -22,32 +22,39 @@ public class VR_Controller : MonoBehaviour {
 
     public void ShowLineRenderer(Vector3 hitPosition, Color lineColor)
     {
-        //Uses the new Line Renderer's "Set Positions", though when tested resulted in a flickering line.
-        //Vector3[] positions = new Vector3[] { transform.position, hitPosition };
-        //uiLineRenderer.SetPositions(positions);
-
-        float distance = Vector3.Distance(transform.position, hitPosition);
-        uiLineRenderer.transform.localScale = new Vector3(uiLineRenderer.transform.localScale.x, uiLineRenderer.transform.localScale.y, distance);
+        Vector3[] positions = new Vector3[] { transform.position, hitPosition };
+        uiLineRenderer.SetPositions(positions);
         uiLineRenderer.startColor = lineColor;
         uiLineRenderer.endColor = lineColor;
     }
 
     public void ShowLineRenderer(Vector3 hitPosition, Color startColor, Color endColor)
     {
-        //Uses the new Line Renderer's "Set Positions", though when tested resulted in a flickering line.
-        //Vector3[] positions = new Vector3[] { transform.position, hitPosition };
-        //uiLineRenderer.SetPositions(positions);
-
-        float distance = Vector3.Distance(transform.position, hitPosition);
-        uiLineRenderer.transform.localScale = new Vector3(uiLineRenderer.transform.localScale.x, uiLineRenderer.transform.localScale.y, distance);
+        Vector3[] positions = new Vector3[] { transform.position, hitPosition };
+        uiLineRenderer.SetPositions(positions);
         uiLineRenderer.startColor = startColor;
         uiLineRenderer.endColor = endColor;
+    }
+
+    public void DisableLineRenderer()
+    {
+        Vector3[] positions = new Vector3[] { Vector3.zero, Vector3.zero };
+        uiLineRenderer.SetPositions(positions);
     }
 
     public RaycastHit Shoot3DRaycast(float range, LayerMask mask)
     {
         RaycastHit toReturn;
-        Physics.Raycast(transform.position, transform.forward, out toReturn, range);
+        Physics.Raycast(transform.position, transform.forward, out toReturn, range, mask);
+
+        return toReturn;
+    }
+
+    public RaycastHit Shoot3DRaycast(float range, int layer)
+    {
+        LayerMask mask = (1 << layer);
+        RaycastHit toReturn;
+        Physics.Raycast(transform.position, transform.forward, out toReturn, range, mask);
 
         return toReturn;
     }

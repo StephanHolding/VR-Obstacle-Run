@@ -9,6 +9,10 @@ public class UI_ScoreWindow : MonoBehaviour {
 
     private void OnEnable()
     {
-        scoreText.text = GameManager.instance.currentScore.score.ToString();
+        if (GameManager.instance != null)
+        {
+            scoreText.text = GameManager.instance.currentScore.score.ToString();
+        }
+
     }
 }

@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public static class HierarchyHelp {
 
+    public enum Axis {
+        x,
+        y,
+        z,
+    }
+
+    public static string[] alphabet = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+
     public static List<Transform> FillListWithChildren(Transform parent)
     {
         Transform[] allChildren = parent.GetComponentsInChildren<Transform>();
