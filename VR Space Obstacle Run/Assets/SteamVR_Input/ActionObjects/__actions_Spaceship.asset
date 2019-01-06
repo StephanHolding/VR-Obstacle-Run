@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16aa7111dcfd8aa44a1861ab241c5618, type: 3}
+  m_Name: __actions_Spaceship
+  m_EditorClassIdentifier: 
+  allActions:
+  - {fileID: 11400000, guid: c8a2c8afcf11b524593b94f0417d377e, type: 2}
+  - {fileID: 11400000, guid: 21adbbab200ab34409f995ad29002793, type: 2}
+  - {fileID: 11400000, guid: 19e6f45d87422a64595bd6c0d006a455, type: 2}
+  - {fileID: 11400000, guid: 050f7d7ddb65d544794c351873b81479, type: 2}
+  - {fileID: 11400000, guid: d93271ae7238ff04b88bd5ab9fdfbe7d, type: 2}
+  - {fileID: 11400000, guid: 8689e08b7c2281b478169523897e39ac, type: 2}
+  - {fileID: 11400000, guid: 7f6c8b1052007b54f93fcf423181ab4a, type: 2}
+  nonVisualInActions:
+  - {fileID: 11400000, guid: c8a2c8afcf11b524593b94f0417d377e, type: 2}
+  - {fileID: 11400000, guid: 21adbbab200ab34409f995ad29002793, type: 2}
+  - {fileID: 11400000, guid: 19e6f45d87422a64595bd6c0d006a455, type: 2}
+  - {fileID: 11400000, guid: 050f7d7ddb65d544794c351873b81479, type: 2}
+  - {fileID: 11400000, guid: d93271ae7238ff04b88bd5ab9fdfbe7d, type: 2}
+  - {fileID: 11400000, guid: 8689e08b7c2281b478169523897e39ac, type: 2}
+  visualActions: []
+  poseActions: []
+  skeletonActions: []
+  outActionArray:
+  - {fileID: 11400000, guid: 7f6c8b1052007b54f93fcf423181ab4a, type: 2}
+  fullPath: /actions/Spaceship
+  usage: single
+  inActions: {fileID: 11400000, guid: 3e3636ea06369404f88a306a8211a981, type: 2}
+  outActions: {fileID: 11400000, guid: d237ab0081e58b54d9519d5c350cc458, type: 2}

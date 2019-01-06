@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642e8cc6af46ce24680368703ec3b9c2, type: 3}
+  m_Name: SteamVR_Input_ActionSet_Spaceship_In
+  m_EditorClassIdentifier: 
+  actionSet: {fileID: 0}
+  listDirection: 0
+  actions:
+  - {fileID: 11400000, guid: c8a2c8afcf11b524593b94f0417d377e, type: 2}
+  - {fileID: 11400000, guid: 21adbbab200ab34409f995ad29002793, type: 2}
+  - {fileID: 11400000, guid: 19e6f45d87422a64595bd6c0d006a455, type: 2}
+  - {fileID: 11400000, guid: 050f7d7ddb65d544794c351873b81479, type: 2}
+  - {fileID: 11400000, guid: d93271ae7238ff04b88bd5ab9fdfbe7d, type: 2}
+  - {fileID: 11400000, guid: 8689e08b7c2281b478169523897e39ac, type: 2}
+  Flying: {fileID: 11400000, guid: c8a2c8afcf11b524593b94f0417d377e, type: 2}
+  Firing: {fileID: 11400000, guid: 21adbbab200ab34409f995ad29002793, type: 2}
+  Pause: {fileID: 11400000, guid: 19e6f45d87422a64595bd6c0d006a455, type: 2}
+  Interact: {fileID: 11400000, guid: 050f7d7ddb65d544794c351873b81479, type: 2}
+  SwitchController: {fileID: 11400000, guid: d93271ae7238ff04b88bd5ab9fdfbe7d, type: 2}
+  UI_Interact: {fileID: 11400000, guid: 8689e08b7c2281b478169523897e39ac, type: 2}
